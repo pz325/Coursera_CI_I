@@ -54,17 +54,29 @@ def getData(startTime, endTime, stockList):
     return ls_symbols, d_data
 
 
+import datetime
 if __name__ == '__main__':
     dt_start = dt.datetime(2008, 1, 1)
     dt_end = dt.datetime(2009, 12, 31)
     stockList = 'sp5002012'
     priceThreshold = 7.0
+
+    t = datetime.datetime.now()
     ls_symbols, d_data = getData(dt_start, dt_end, stockList)
+    c = datetime.datetime.now() - t
+    print('Get data: {ms} ms'.format(ms=c))
+
+    t = datetime.datetime.now()
     df_events, totalEvent = find_events(ls_symbols, d_data, priceThreshold)
+    c = datetime.datetime.now() - t
+    print('Find event: {ms} ms'.format(ms=c))
 
     print(totalEvent)
 
     print "Creating Study"
+    t = datetime.datetime.now()    
     ep.eventprofiler(df_events, d_data, i_lookback=20, i_lookforward=20,
                 s_filename=stockList+'.pdf', b_market_neutral=True, b_errorbars=True,
                 s_market_sym='SPY')
+    c = datetime.datetime.now() - t
+    print('Creating Study: {ms} ms'.format(ms=c))
