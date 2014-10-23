@@ -104,8 +104,8 @@ def main():
         orderCsv = sys.argv[2]
         valueCsv = sys.argv[3]
     else:
-        initCash = 1000000
-        orderCsv = 'orders/orders2.csv' 
+        initCash = 50000
+        orderCsv = 'hw4.csv' 
         valueCsv = 'values.csv'
     print(initCash, orderCsv, valueCsv)
 
@@ -126,7 +126,7 @@ def main():
     print(portfolioValue)
     savePortfolioValue(portfolioValue, valueCsv)
 
-    print(portfolioValue.loc[dt.datetime(2011, 7, 21)+dt.timedelta(hours=16)])
+    # print(portfolioValue.loc[dt.datetime(2011, 7, 21)+dt.timedelta(hours=16)])
 
 
 if __name__ == '__main__':
