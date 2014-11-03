@@ -1,9 +1,8 @@
-<<<<<<< HEAD
 *.sublime-workspace
 *.pdf
 hw4.csv
 values.csv
-=======
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
@@ -58,4 +57,3 @@ docs/_build/
 
 # PyBuilder
 target/
->>>>>>> 96b7e8ba1a4b556bee31cc12baa28f4015c4edf4
