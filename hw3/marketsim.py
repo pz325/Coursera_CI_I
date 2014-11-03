@@ -104,8 +104,8 @@ def main():
         orderCsv = sys.argv[2]
         valueCsv = sys.argv[3]
     else:
-        initCash = 50000
-        orderCsv = 'hw4.csv' 
+        initCash = 1000000
+        orderCsv = 'hw7.csv' 
         valueCsv = 'values.csv'
     print(initCash, orderCsv, valueCsv)
 
